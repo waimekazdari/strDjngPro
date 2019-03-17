@@ -1,9 +1,10 @@
-<h1>Blog</h1>
+<h1>Blog({{posts | length}})</h1>
 
 {% for post in posts %}
   <article class="">
-    <h2>{{post.id}}:{{post.title}}</h2>
-    <p>{{post.body}}</p>
+    <h2><a href="/blog/post/{{post.id}}">{{post.id}}:{{post.title | upper}}</a></h2>
+    <p>{{post.body | truncatewords:2}}</p>
+    <a href="/blog/post/{{post.id}}">Lire la suite</a>
   </article>
   {% if not forloop.last %}
     <hr>
