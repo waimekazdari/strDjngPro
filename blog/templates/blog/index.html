@@ -8,4 +8,6 @@
   {% if not forloop.last %}
     <hr>
   {% endif %}
+{% empty %}
+  <p>Sorry, No post available</p>
 {% endfor %}
