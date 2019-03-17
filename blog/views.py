@@ -9,3 +9,7 @@ def index(request):
         {'id':3,'title':'third article', 'body':'my third article'},
     ]
     return render(request, 'blog/index.html',{'posts':posts})
+
+
+def details(request,id):
+    return render(request, 'blog/details.html')
