@@ -1,15 +1,13 @@
 from django.shortcuts import render
 
-posts =[
-    {'id':1,'title':'first article', 'body':'my first article'},
-    {'id':2,'title':'second article', 'body':'my second article'},
-    {'id':3,'title':'third article', 'body':'my third article'},
-]
+#from mocks import la class Post
+from .mocks import Post
 def index(request):
 
-    #posts= []
+    posts= Post.all()
     return render(request, 'blog/index.html',{'posts':posts})
 
 
 def details(request,id):
-    return render(request, 'blog/details.html', {'post': posts[int(id) - 1]})
+    post =  Post.find(id)
+    return render(request, 'blog/details.html', {'post': post})
